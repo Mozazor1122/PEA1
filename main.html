@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEA | เมนูหลัก</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6a1b9a;
+      --secondary: #ede7f6;
+      --background: #faf6fb;
+      --white: #fff;
+      --text: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+       font-family: 'Sarabun', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 30px;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-title {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logout-button {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logout-button:hover {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 30px 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 24px;
+      border-left: 6px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .button {
+      background: var(--secondary);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--primary);
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .button i {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 22px;
+        padding: 20px 10px;
+      }
+
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .logout-button {
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ส่วนหัว -->
+  <header>
+    <div class="header-container">
+      <div class="header-title">
+        <i class='bx bx-menu-alt-left'></i> ระบบบันทึกรายงานการจัดสรรเครื่องคอมพิวเตอร์และอุปกรณ์ประกอบ
+      </div>
+
+      <button class="logout-button" onclick="location.href='logout.php'">
+        <i class='bx bx-log-out'></i> Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- ส่วนเนื้อหา -->
+  <main>
+    <!-- ข้อมูลที่มีการจัดสรร -->
+    <section class="section">
+      <div class="section-title">ข้อมูลหน่วยงานที่ได้รับจัดสรร</div>
+      <div class="grid">
+        <div class="button" onclick="location.href='form.php'">
+          <i class='bx bx-edit'></i>
+          บันทึกข้อมูลรับจัดสรร
+        </div>
+        <div class="button" onclick="location.href='weekly.php'">
+          <i class='bx bx-calendar-week'></i>
+          รายงานรับจัดสรร <br> ประจำสัปดาห์
+        </div>
+        <div class="button" onclick="location.href='monthly.php'">
+          <i class='bx bx-calendar'></i>
+          รายงานรับจัดสรร <br> ประจำเดือน
+        </div>
+        <div class="button" onclick="location.href='department_view.php'">
+          <i class='bx bx-building-house'></i>
+          รายงานรับจัดสรรตาม <br> หน่วยงาน
+        </div>
+      </div>
+    </section>
+
+    <!-- ข้อมูลที่ไม่ได้จัดสรร -->
+    <section class="section">
+      <div class="section-title">ข้อมูลหน่วยงานที่ไม่ได้รับจัดสรร</div>
+      <div class="grid">
+        <div class="button" onclick="location.href='request_form.php'">
+          <i class='bx bx-block'></i>
+          บันทึกข้อมูลไม่ได้รับจัดสรร
+        </div>
+        <div class="button" onclick="location.href='view_request_weekly.php'">
+          <i class='bx bx-calendar-week'></i>
+          ไม่ได้รับจัดสรร <br> ประจำสัปดาห์
+        </div>
+        <div class="button" onclick="location.href='view_request_monthly.php'">
+          <i class='bx bx-calendar'></i>
+          ไม่ได้รับจัดสรร <br> ประจำเดือน
+        </div>
+        <div class="button" onclick="location.href='view_depart.php'">
+          <i class='bx bx-building-house'></i>
+          ไม่ได้รับจัดสรรตาม <br> หน่วยงาน
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">ข้อมูลบันทึกรายงานการจัดสรรเครื่องคอมพิวเตอร์และอุปกรณ์ประกอบ</div>
+      <div class="grid">
+        <div class="button" onclick="location.href='totaldata.php'">
+          <i class='bx bx-file'></i>
+          ข้อมูลบันทึกรายงาน
+        </div>
+        <!-- <div class="button" onclick="location.href='dashboard.php'">
+          <i class='bx bx-bar-chart-square'></i>
+          แดชบอร์ด
+        </div> -->
+        </div>
+    </section>
+  </main>
+
+</body>
+</html>

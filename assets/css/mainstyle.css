@@ -1,0 +1,94 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Poppins:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Sarabun', sans-serif;
+}
+
+body {
+  background-image: url(../img/bg6.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---- Variables ---- */
+:root {
+  --primary-color: rgba(255, 255, 255, 0.15);
+  --second-color: #ffffff;
+  --black-color: #000000;
+  --accent-color: #e99cf0;
+}
+
+/* ---- กล่องใหญ่ครอบปุ่มทั้งหมด ---- */
+.box {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 3em;
+  backdrop-filter: blur(25px);
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: 2px solid var(--second-color);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  color: var(--second-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* ---- ปุ่มเมนู ---- */
+.button {
+  background-color: var(--accent-color);
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--black-color);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  backdrop-filter: blur(15px);
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+  background-color: #f0b2f8;
+}
+
+/* ---- ส่วนหัวหรือข้อความด้านบน ---- */
+.main_box {
+  text-align: center;
+  padding: 50px 0 0;
+}
+
+.main_but {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--second-color);
+  background-color: transparent;
+  border: none;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  font-size: 40px;
+  background: linear-gradient(to right, #d8b4f8, #a78bfa);
+  padding: 10px 40px;
+  border-radius: 30px;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+

@@ -1,0 +1,152 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: url("../img/h10.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sarabun', sans-serif;
+  /* background: linear-gradient(135deg, #a501ab, #a421d8, #c942f6); */
+  /* background-size: 400% 400%; */
+  /* animation: bgMove 15s ease infinite; */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 100%;
+  max-width: none;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #fceabb;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #fceabb;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  min-width: 200px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+select option {
+  color: #000;
+  background-color: #fff;
+}
+
+select:hover, select:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: #fceabb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+}
+
+thead {
+  background: rgba(255,255,255,0.15);
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.08);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.btn-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: #4b0082;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(138, 43, 226, 0.6);
+}

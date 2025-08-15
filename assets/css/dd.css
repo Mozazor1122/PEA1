@@ -1,0 +1,69 @@
+
+
+
+/* reset box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+body{
+    background-image: url("../img/bg7.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+  /* background: linear-gradient(135deg, #a501ab, #a421d8, #c942f6); */
+  /* background-size: 400% 400%; */
+  /* animation: bgMove 15s ease infinite; */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Sarabun', sans-serif;
+}
+.BOX{
+top: 1px;
+min-height: 100vh;
+}
+h1{
+    color:  #fceabb;
+    font-size: 100px;
+    
+}
+h2{
+    color:  #fceabb;
+    font-size: 100px;
+
+}
+/* ปุ่มกลับไปหน้า main หรือปุ่มทั่วไป */
+.button {
+  background: linear-gradient(45deg, #ee0000, #ee00ff);  /* เหมือนปุ่ม submit */
+  color: #fff;
+  margin-left: 15px;
+  padding: 14px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+/* ปุ่มกลับเมื่อ hover */
+.button:hover {
+  background: linear-gradient(45deg, #f30000,#f66905);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.9);
+}
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}

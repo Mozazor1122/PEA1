@@ -1,0 +1,249 @@
+/* reset box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+body {
+   background-image: url("../img/bg7.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(135deg, #a501ab, #a421d8, #c942f6); */
+  /* background-size: 400% 400%; */
+  /* animation: bgMove 15s ease infinite; */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Sarabun', sans-serif;
+}
+
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+form {
+background: rgba(191, 93, 227, 0.536);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 600px;
+  backdrop-filter: blur(12px);
+  color: #cd2fedcb;
+  animation: fadeIn 1.2s ease-out;
+  font-family: 'Sarabun', sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #fceabb;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่าง label กับ input */
+  font-weight: 700;
+  font-size: 20px;
+  color: #f0e6ff;
+}
+
+input[type='text'],
+input[type='date'],
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 20px;
+  transition: 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  margin-bottom: 24px; /* เพิ่ม margin ให้แต่ละ input ช่องห่างกัน */
+}
+
+select option {
+  color: #000;
+  background-color: #fff;
+}
+
+input[type='text']:focus,
+input[type='date']:focus,
+select:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* ปุ่มในฟอร์ม */
+button[type='submit'],
+.button {
+  padding: 16px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6);
+}
+
+/* ปุ่มบันทึกข้อมูล */
+button[type='submit'] {
+  background: linear-gradient(45deg, #0004ff, #07d8f4);
+  color: #fff;
+  width: auto;
+}
+
+/* ปุ่มบันทึกข้อมูลเมื่อ hover */
+button[type='submit']:hover {
+  background: linear-gradient(45deg, #11ff00, #099604);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.9);
+}
+
+/* ปุ่มกลับไปหน้า main */
+.button {
+  background: linear-gradient(45deg, #0004ff, #07d8f4);
+  color: #fff;
+  margin-left: 15px;
+  padding: 16px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6);
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ปุ่มกลับเมื่อ hover */
+.button:hover {
+  background: linear-gradient(45deg, #ba0000, #f64803);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.9);
+}
+
+/* กลุ่มปุ่มอยู่ในแถวเดียวกัน */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Responsive: มือถือ */
+@media (max-width: 480px) {
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .button,
+  button[type='submit'] {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* textarea หมายเหตุ */
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 20px;
+  resize: vertical;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
+  font-family: 'Sarabun', sans-serif;
+}
+
+textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* ปุ่มสไตล์เดียวกับปุ่ม submit แต่ขนาดเล็กลงและสีแตกต่าง */
+.button-view,
+.button-back {
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* ปุ่มดูคำขอ */
+.button-view {
+  background: linear-gradient(45deg, #5a9bd4, #2f80ed);
+  color: #fff;
+  margin: 0 10px;
+}
+
+.button-view:hover {
+  background: linear-gradient(45deg, #2f80ed, #5a9bd4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(47, 128, 237, 0.9);
+}
+
+/* ปุ่มย้อนกลับ */
+.button-back {
+  background: linear-gradient(45deg,  #c901fb,#e256cb);
+  color: #fff;
+  margin-left: 10px;
+}
+
+.button-back:hover {
+  background: linear-gradient(45deg, #ba0000, #f64803);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(212, 108, 212, 0.9);
+}
+
+/* กลุ่มปุ่มเรียงกันสวย */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
