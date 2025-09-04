@@ -34,29 +34,36 @@ $currentMonth = isset($_GET['month']) ? intval($_GET['month']) : date('n');
 $currentYear = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
 $currentWeekInMonth = isset($_GET['week_in_month']) ? intval($_GET['week_in_month']) : 1;
 
-// คำนวณช่วงวันที่สำหรับสัปดาห์ในเดือน
+// คำนวณวันเริ่มต้นและวันสิ้นสุดของเดือน
 $startOfMonth = new DateTime("{$currentYear}-{$currentMonth}-01");
-$weekOffset = ($currentWeekInMonth - 1) * 7;
-$week_start_dt = clone $startOfMonth;
-$week_start_dt->modify("+{$weekOffset} days");
-$week_end_dt = clone $week_start_dt;
-$week_end_dt->modify('+6 days');
 $lastDayOfMonth = new DateTime($startOfMonth->format('Y-m-t'));
-if ($week_end_dt > $lastDayOfMonth) {
-    $week_end_dt = $lastDayOfMonth;
+
+// คำนวณวันเริ่มต้นของสัปดาห์ในเดือน
+$week_start_dt = clone $startOfMonth;
+$week_start_dt->modify('+' . (($currentWeekInMonth - 1) * 7) . ' days');
+
+// ถ้าเริ่มต้นสัปดาห์เกินวันสิ้นเดือน ให้ใช้วันสิ้นเดือน
+if ($week_start_dt > $lastDayOfMonth) {
+    $week_start_dt = clone $lastDayOfMonth;
 }
 
-$year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
-$week = isset($_GET['week']) ? intval($_GET['week']) : date('W');
+// วันสิ้นสุดสัปดาห์ = 6 วันหลังวันเริ่มต้น
+$week_end_dt = clone $week_start_dt;
+$week_end_dt->modify('+6 days');
 
-// หาวันเริ่ม-จบของสัปดาห์
-$startDate = new DateTime();
-$startDate->setISODate($year, $week);
-$week_start = $startDate->format('Y-m-d');
-$startDate->modify('+6 days');
-$week_end = $startDate->format('Y-m-d');
+// ถ้าวันสิ้นสุดเกินวันสิ้นเดือน ให้ใช้วันสิ้นเดือน
+if ($week_end_dt > $lastDayOfMonth) {
+    $week_end_dt = clone $lastDayOfMonth;
+}
 
-$sql = "SELECT * FROM request_form WHERE Request_date BETWEEN ? AND ?";
+// แปลงเป็นรูปแบบ YYYY-MM-DD
+$week_start = $week_start_dt->format('Y-m-d');
+$week_end = $week_end_dt->format('Y-m-d');
+
+// SQL query
+$sql = "SELECT Request_date AS request_date, Agency_name, Device_name, Request_number, Note 
+        FROM request_form 
+        WHERE Request_date BETWEEN ? AND ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('ss', $week_start, $week_end);
 $stmt->execute();

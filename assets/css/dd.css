@@ -1,69 +1,113 @@
-
-
-
-/* reset box-sizing */
+/* Reset */
 * {
   box-sizing: border-box;
-}
-
-body{
-    background-image: url("../img/bg7.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-  /* background: linear-gradient(135deg, #a501ab, #a421d8, #c942f6); */
-  /* background-size: 400% 400%; */
-  /* animation: bgMove 15s ease infinite; */
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
   font-family: 'Sarabun', sans-serif;
 }
-.BOX{
-top: 1px;
-min-height: 100vh;
-}
-h1{
-    color:  #fceabb;
-    font-size: 100px;
-    
-}
-h2{
-    color:  #fceabb;
-    font-size: 100px;
 
+body {
+  background: #1e1e2f;
+  color: #f1f1f1;
+  padding: 20px;
 }
-/* ปุ่มกลับไปหน้า main หรือปุ่มทั่วไป */
-.button {
-  background: linear-gradient(45deg, #ee0000, #ee00ff);  /* เหมือนปุ่ม submit */
-  color: #fff;
-  margin-left: 15px;
-  padding: 14px 24px;
-  font-size: 20px;
-  font-weight: bold;
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sarabun', sans-serif;
+  background: url("../img/h2.jpg") no-repeat center center fixed;
+  background-size: cover;
+} */
+/* Header */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #03a9f4;
+}
+
+/* Filter */
+.filter-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #2b2b3c;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-container label {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.filter-container select,
+.filter-container button {
+  padding: 8px 12px;
+  border-radius: 6px;
   border: none;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  user-select: none;
+  font-size: 14px;
 }
 
-/* ปุ่มกลับเมื่อ hover */
-.button:hover {
-  background: linear-gradient(45deg, #f30000,#f66905);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.9);
+.filter-container select {
+  background: #3a3a50;
+  color: #fff;
 }
-.form-buttons {
+
+.filter-container button {
+  background: #03a9f4;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.filter-container button:hover {
+  background: #0288d1;
+}
+
+/* Summary Cards */
+.summary-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #2b2b3c;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.count {
+  font-size: 2.2em;
+  color: #ffd54f;
+  margin: 10px 0;
+}
+
+/* Charts Layout */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 กราฟต่อแถว */
+  gap: 20px;  /* เว้นระยะห่างระหว่างกราฟ */
+}
+
+.charts-container .card {
+  padding: 15px;
+  height: 300px;        /* ความสูงของกราฟ */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  gap: 10px;
-  flex-wrap: wrap;
 }
+
+.charts-container .card canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+

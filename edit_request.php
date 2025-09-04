@@ -36,7 +36,7 @@ $request = $conn->query("SELECT * FROM request_form WHERE Request_id = $id")->fe
 </head>
 <body>
   <div class="form-container">
-    <h2>แก้ไขคำขอ</h2>
+    <h2>แก้ไขฟอร์มไม่ได้จัดสรร</h2>
     <form method="post">
 
       <label>หน่วยงาน:</label>

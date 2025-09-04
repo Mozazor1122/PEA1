@@ -76,7 +76,7 @@ select {
   border: none;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #000000;
   font-size: 20px;
   transition: 0.3s;
   -webkit-appearance: none;
@@ -86,9 +86,17 @@ select {
   margin-bottom: 24px; /* เพิ่ม margin ให้แต่ละ input ช่องห่างกัน */
 }
 
+select {
+  color: #fff; /* ให้เหมือน input ช่องอื่น */
+  background: rgba(255, 255, 255, 0.1);
+}
+
 select option {
-  color: #000;
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.9); /* พื้นหลังตอน dropdown */
+  color: #000000; /* สีตัวอักษร */
+}
+select option:hover {
+  background: rgba(0, 255, 8, 0.9);
 }
 
 input[type='text']:focus,

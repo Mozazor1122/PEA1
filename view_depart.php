@@ -84,7 +84,7 @@ $result = $stmt->get_result();
 <div class="container">
     <a href="main.html" class="btn-back">← กลับไปหน้า Main</a>
     <a href="Report.pdf" class="btn export" target="_blank">📄 Export PDF</a>
-    <h2>ข้อมูลคำขอตามหน่วยงาน</h2>
+    <h2>ข้อมูลไม่ได้รับจัดสรรตามหน่วยงาน</h2>
 
     <form method="GET">
         <label for="agency">เลือกหน่วยงาน:</label>

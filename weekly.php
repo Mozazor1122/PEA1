@@ -56,7 +56,7 @@ $result = $stmt->get_result();
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>ข้อมูลรายสัปดาห์</title>
+  <title>ข้อมูลรายงานสัปดาห์</title>
   <link rel="stylesheet" href="assets/css/weekly.css" />
   <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
   <style>
@@ -88,7 +88,7 @@ $result = $stmt->get_result();
   </a>
 
   <h2 style="text-align: center; font-size: 24pt; font-weight: bold; margin-bottom: 20px;">
-    ข้อมูลรายสัปดาห์
+    ข้อมูลรายงานสัปดาห์
   </h2>
 
   <!-- ฟอร์มเลือกเดือน ปี สัปดาห์ -->

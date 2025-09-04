@@ -83,7 +83,7 @@ $result = $stmt->get_result();
 <div class="container">
   <a href="main.html" class="btn-back">← กลับไปหน้า Main</a>
   <a href="Report.pdf" class="btn export" target="_blank">📄 Export PDF</a>
-  <h2>ข้อมูลรายเดือน</h2>
+  <h2>ข้อมูลรายงานเดือน</h2>
 
   <form method="get" action="" class="filter-form">
   <label for="month">เลือกเดือน:</label>

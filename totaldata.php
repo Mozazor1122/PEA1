@@ -42,14 +42,21 @@ $formCon = [];
 $requestCon = [];
 
 if ($month !== 'all' && $year !== 'all') {
+    // กรองทั้งเดือน + ปี
     $start = "$year-" . str_pad($month, 2, '0', STR_PAD_LEFT) . "-01";
     $end = date("Y-m-t", strtotime($start));
     $formCon[] = "Form_date BETWEEN '$start' AND '$end'";
     $requestCon[] = "Request_date BETWEEN '$start' AND '$end'";
+} elseif ($month !== 'all') {
+    // กรองเฉพาะเดือน (ทุกปี)
+    $formCon[] = "MONTH(Form_date) = '$month'";
+    $requestCon[] = "MONTH(Request_date) = '$month'";
 } elseif ($year !== 'all') {
+    // กรองเฉพาะปี
     $formCon[] = "YEAR(Form_date) = '$year'";
     $requestCon[] = "YEAR(Request_date) = '$year'";
 }
+
 
 if ($agency !== 'all') {
     $formCon[] = "Form_agencyname = '" . $conn->real_escape_string($agency) . "'";
@@ -185,7 +192,7 @@ exit;
     <a href="main.html" class="btn-back">← กลับไปหน้า Main</a>
     <a href="?export=pdf&month=<?= $month ?>&year=<?= $year ?>&agency=<?= urlencode($agency) ?>&contract=<?= urlencode($contract) ?>" class="btn export" target="_blank">📄 Export PDF</a>
   </div>
-  <h2>รายการรวมจากฟอร์มการจัดสรรและคำขอ</h2>
+  <h2>รายการรวมจากฟอร์มการจัดสรรและฟอร์มไม่ได้รับจัดสรร</h2>
 
   <form method="get" class="filter-form">
     <label>เดือน:
@@ -252,7 +259,7 @@ exit;
     <?php if ($result->num_rows > 0): ?>
       <?php while($row = $result->fetch_assoc()): ?>
       <tr>
-        <td><?= $row['type'] === 'form' ? 'ฟอร์มจัดสรร' : 'คำขอ' ?></td>
+        <td><?= $row['type'] === 'form' ? 'ฟอร์มจัดสรร' : 'ไม่ได้จัดสรร' ?></td>
         <td><?= $row['name'] ?? '-' ?></td>
         <td><?= $row['agency'] ?></td>
         <td><?= $row['device'] ?></td>

@@ -1,0 +1,133 @@
+
+
+
+body {
+  
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url("../img/h5.jpg");
+    background-position: center;
+    background-size: cover;       /* ให้ภาพเต็มจอและรักษาสัดส่วน */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* ให้ภาพอยู่กับหน้าจอเวลา scroll */
+    /* color: #fff; */
+    /* animation: gradientBG 15s ease infinite; */ /* ถ้าอยากเอา gradient ออก */
+  
+  
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  text-align: center;
+  color: #ff00f2;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #971dfa;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(42, 42, 64, 0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 42px;
+  color: #4dd0e1;
+  text-shadow: 0 0 5px #4dd0e1;
+}
+
+.card p {
+  margin: 8px 0 0;
+  font-size: 30px;
+  color: #ccc;
+}
+
+canvas {
+  max-height: 320px;
+  margin-top: 10px;
+}
+
+/* ปรับ Tooltip ของ Chart.js ให้สวยขึ้น */
+.chartjs-tooltip {
+  background: rgba(0,0,0,0.8) !important;
+  color: #fff !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  padding: 6px 10px !important;
+}
+/* Containers */
+.summary-container,
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    margin-top: 10px;
+}
+
+/* Summary Card */
+.summary-container .card {
+    flex: 1 1 250px; /* ขยายเต็มที่ แต่ไม่เล็กกว่า 250px */
+    max-width: 320px;
+}
+
+/* Charts Card */
+.charts-container .card {
+    flex: 1 1 300px;
+    max-width: 480px;
+}
+
+/* Card style */
+.card {
+    background: rgba(42,42,64,0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 40px;
+    color: #4dd0e1;
+    text-shadow: 0 0 5px #4dd0e1;
+}
+
+.card p {
+    margin: 8px 0 0;
+    font-size: 18px;
+    color: #ccc;
+}
+
+canvas {
+    max-height: 300px;
+    margin-top: 10px;
+}

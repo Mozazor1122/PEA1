@@ -11,22 +11,20 @@ html, body {
 }
 
 body {
-   background-image: url("../img/h10.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  /* background: linear-gradient(135deg, #a501ab, #a421d8, #c942f6); */
-  /* background-size: 400% 400%; */
-  /* animation: bgMove 15s ease infinite; */
+   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  font-family: 'Sarabun', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-image: url("../img/h12.jfif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  justify-content: flex-start;
   align-items: center;
-  padding: 20px;
-  font-family: 'Sarabun', sans-serif;
+  padding: 40px 10px 20px;
+  background-color: #1b003b; /* พื้นหลังเข้ากับธีมม่วง */
 }
 
 @keyframes bgMove {
@@ -170,11 +168,12 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 25px;
-  table-layout: fixed;
+  /* table-layout: fixed; */  /* ลบออกหรือคอมเมนต์ */
   word-wrap: break-word;
   color: #fff;
   border-spacing: 0 8px;
 }
+
 
 thead tr {
   background: linear-gradient(45deg, #800080, #8a2be2);

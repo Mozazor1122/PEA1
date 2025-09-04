@@ -9,7 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Sarabun', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url("../img/h10.png");
+   background-image: url("../img/h12.jfif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -284,4 +284,10 @@ html, body {
   margin-top: 30px;
   flex-wrap: wrap; /* ป้องกันล้นหน้าจอในมือถือ */
   grid-column: 1 / -1;
+}
+select option {
+  color: #000000;               
+  background-color: #ffffff;   
+   margin: 30px;
+  border-radius: 26px;
 }

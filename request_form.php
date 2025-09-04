@@ -13,7 +13,7 @@ while ($row = $result->fetch_assoc()) {
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>ฟอร์มขอรับจัดสรร</title>
+  <title>ฟอร์มไม่ได้รับจัดสรร</title>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/request_form.css" />
   <style>
@@ -27,7 +27,7 @@ while ($row = $result->fetch_assoc()) {
 </head>
 <body>
   <form id="requestForm" class="form-box" method="post">
-    <h2>แบบฟอร์มขอรับจัดสรรอุปกรณ์</h2>
+    <h2>แบบฟอร์มไม่ได้รับจัดสรร</h2>
 
     <label for="agency_name">ชื่อหน่วยงาน</label>
     <input type="text" id="agency_name" name="agency_name" required />
